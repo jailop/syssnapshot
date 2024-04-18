@@ -4,6 +4,7 @@ use pnet::datalink;
 use pnet::ipnetwork::IpNetwork;
 
 mod utils;
+mod performance;
 
 fn show_system_info() {
     println!("System name   : {}", System::name().unwrap());
@@ -171,6 +172,8 @@ fn main() {
     show_top_processes();
     println!("{}", "\nDISK USAGE:\n");
     show_disk_usage();
+    println!("");
+    let _ = performance::disk();
     println!("{}", "\nNETWORK INTERFACES:\n");
     show_network_usage();
 }
