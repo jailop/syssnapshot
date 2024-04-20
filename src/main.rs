@@ -3,8 +3,8 @@ use sysinfo::{System, Disks};
 use pnet::datalink;
 use pnet::ipnetwork::IpNetwork;
 
-mod utils;
-mod performance;
+pub mod utils;
+pub mod performance;
 
 fn show_system_info() {
     println!("System name   : {}", System::name().unwrap());
@@ -23,7 +23,7 @@ fn show_cpu_usage() {
         accum += usage;
         println!("CPU{:2}  : {:5.1}%", idx, usage);
     }
-    println!("Average: {:5.1}%", accum / sys.cpus().len() as f32 * 100.0);
+    println!("Average: {:5.1}%", accum / sys.cpus().len() as f32);
 }
 
 fn show_memory_usage() {

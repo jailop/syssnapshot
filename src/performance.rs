@@ -2,6 +2,15 @@ use std::fs::OpenOptions;
 use std::io::{self, Read, Seek, SeekFrom, Write};
 use std::time::Instant;
 
+/// Measures the disk perfomance and sequential reading and writing.
+///
+/// This funcion writes a big file to disk and, after that, reads it, measuring the time consumed
+/// by each operation. Using that information, it reports disk writing and reading speeds.
+///
+/// Example:
+/// ```rust
+/// disk();
+/// ```
 pub fn disk() -> io::Result<i32> {
     let n_bytes = 1024 * 1024 * 100;  // 100 MB 
     let mut file = OpenOptions::new()
