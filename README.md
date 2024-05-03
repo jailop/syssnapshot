@@ -9,7 +9,7 @@ build system.
 
 Open a new terminal and clone this repository in your local disk:
 
-    $ git clone git@github.com:jailop/syssnapshot.git
+    $ git clone https://github.com/jailop/syssnapshot.git
     
 Build and install the binary:
 
